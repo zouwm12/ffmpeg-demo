@@ -149,6 +149,8 @@ static void video_decode_example(const char *outfilename, const char *filename)
 	            }
 		    }
 		}
+        //release resource
++    	av_packet_unref(&packet);
     }
 	
     //release resource

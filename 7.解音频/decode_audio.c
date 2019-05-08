@@ -140,7 +140,8 @@ int main()
 		
 
         }
- 
+        //release resource
++    	av_packet_unref(&packet);
     }
  
     swr_free(&convert_ctx);
