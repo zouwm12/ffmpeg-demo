@@ -1,0 +1,17 @@
+ffmpeg按照步骤
+
+
+1.解压
+2.
+增加h.264编码需要先按照x264
+./configure --enable-libx264 --enable-gpl --enable-decoder=h264 --enable-encoder=libx264 --enable-shared --disable-yasm --enable-postproc --enable-gpl --prefix=/home/share/lib_so/ffmpeg4.1 
+3.make
+4.make install
+5.vi /etc/ld.so.conf
+  加入/home/share/lib_so/ffmpeg4.1/lib  (动态库所在路径)
+6.为 Ffmpeg 加入环境变量
+   vi /etc/profile
+   加入以下内容:
+   FFMPEG=/home/share/lib_so/ffmpeg4.1
+   PATH加入:$FFMPEG/bin
+   source /etc/profile
